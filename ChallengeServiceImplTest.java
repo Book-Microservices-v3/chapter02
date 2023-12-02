@@ -22,16 +22,22 @@ public class ChallengeServiceImplTest {
     
   private ChallengeServiceImpl challengeServiceImpl;
   
-  @MockMockitounit testprivate ChallengeAttemptRepository attemptRepository;
-  @Mockprivate UserRepository userRepository;
-  @Mockprivate EventDispatcher eventDispatcher;
+  @Mock
+  private ChallengeAttemptRepository attemptRepository;
+  
+  @Mock 
+  private UserRepository userRepository;
+  
+  @Mock 
+  private EventDispatcher eventDispatcher;
   
   @BeforeEach
   public void setUp() {
     challengeServiceImpl = new ChallengeServiceImpl(attemptRepository, userRepository, eventDispatcher);
   }
   
-  @Testpublic void checkCorrectAttemptTest() {
+   @Test 
+   public void checkCorrectAttemptTest() {
     
     // given
     long userId = 9 L, attemptId = 1 L;
